@@ -1,0 +1,10 @@
+name: tick
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -s -m 30 --retry 2 https://afterword-arbonomous-7k3q.pages.dev/api/tick
